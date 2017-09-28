@@ -1,3 +1,5 @@
+'use strict';
+
 //  In this challenge, you need to write JavaScript that provides the 
 // following experience: when a user selects one of the thumbnail images using
 // the mouse or keyboard, that image should be displayed in the full size 
@@ -11,3 +13,12 @@
 //    and it'll get easier with practice.
 
 
+function swapThumbnailImage() {
+  $('.thumbnail').on('click', (event) => {
+    const source = $(event.currentTarget).find('img').attr('src');
+    const alternative = $(event.currentTarget).find('img').attr('alt');
+    $('.hero img').attr('src', source).attr('alt', alternative);
+  });
+}
+
+$(swapThumbnailImage());
